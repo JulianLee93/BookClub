@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FriendsTableViewController.h
 //  BookClub
 //
 //  Created by Julian Lee on 1/27/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FriendsTableViewController : UITableViewController
 
 @end
-

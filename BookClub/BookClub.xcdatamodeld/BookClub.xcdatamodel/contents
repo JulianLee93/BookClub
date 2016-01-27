@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Automatic">
+    <entity name="Book" representedClassName="Book" syncable="YES">
+        <attribute name="comments" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="friends" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="commentOf" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="commentOn" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="recByFriends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="recBooks" inverseEntity="Friend" syncable="YES"/>
+    </entity>
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="book" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="commentOn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="commentOf" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <entity name="Friend" representedClassName="Friend" syncable="YES">
+        <attribute name="books" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numOfBooks" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="recBooks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="recByFriends" inverseEntity="Book" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Friend" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Book" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="Comment" positionX="-36" positionY="9" width="128" height="75"/>
+    </elements>
 </model>
