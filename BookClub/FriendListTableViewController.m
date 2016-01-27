@@ -15,6 +15,7 @@
 @property NSArray *listOfFriends;
 @property NSManagedObjectContext *moc;
 
+
 @end
 
 @implementation FriendListTableViewController
@@ -46,6 +47,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    NSString *friendName = [self.listOfFriends[indexPath.row] name];
+    NSLog(@"%@", friendName);
+//    Friend *selectedFriend =
+    
+    
+    
 }
 
 
